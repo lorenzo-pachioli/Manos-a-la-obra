@@ -1,0 +1,29 @@
+.task-input{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-input .task{
+    width: 70%;
+    height: 100%;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    padding: 0 10px;
+}
+
+.task-input .add {
+    width: 25%;
+    height: 100%;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 24px;
+    line-height: 28px;
+    cursor: pointer;
+}

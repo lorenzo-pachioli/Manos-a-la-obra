@@ -1,0 +1,9 @@
+<div class="task-card">
+    <form >
+        <input type="checkbox" (click)="changeCheck()" />
+        <p [ngStyle]="{'text-decoration': checked ? 'line-through':'none'}">{{text}}</p>
+    </form>
+    <button>
+        <img src="../../../assets/trashCan.svg" alt="X" />
+    </button>
+</div>

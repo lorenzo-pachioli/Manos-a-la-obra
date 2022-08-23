@@ -1,0 +1,17 @@
+.task-table {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.task-input {
+    width: 100%;
+    height: 60px;
+}
+
+.task-list {
+    width: 100%;
+}
