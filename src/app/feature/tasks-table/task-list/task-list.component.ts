@@ -1,17 +1,11 @@
 import { 
   Component, 
   OnInit, 
-  Input, 
-  ViewChild, 
-  ElementRef, 
-  Renderer2 
+  Input,
+  Output,
+  EventEmitter
 } from '@angular/core';
-
-interface task {
-  id: Number,
-  text: string,
-  checked: Boolean
-}
+import { ITask } from 'src/app/services/interfaces';
 
 @Component({
   selector: 'app-task-list',
@@ -21,29 +15,17 @@ interface task {
 
 export class TaskListComponent implements OnInit {
 
-  constructor(private renderer2: Renderer2) {}
+  constructor() {}
 
-  @Input() listLength: any;
-  @Input() tasksList!: Array<task>;
-  @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
+  @Input() tasks!: Array<ITask>;
+  @Output() tasksChange: EventEmitter<Array<ITask>> = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(): void {
-    this.addTask();
+  deleteTask(id:number){
+    this.tasks = this.tasks.filter(t => t.id !== id);
+    this.tasksChange.emit(this.tasks)
   }
 
-  addTask() {
-    console.log('tasks:', this.tasksList, 'listLength:', this.listLength);
-
-    if (this.listLength && this.listContainer) {
-      const taskList = this.listContainer.nativeElement;
-      const div = this.renderer2.createElement('app-task-card');
-      const text = this.renderer2.createText(this.tasksList[this.tasksList.length - 1].text);
-      this.renderer2.addClass(div, 'task-card');
-      this.renderer2.appendChild(div, text);
-      this.renderer2.appendChild(taskList, div);
-    }
-  }
 }

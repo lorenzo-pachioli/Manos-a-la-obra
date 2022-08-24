@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-interface task{
-  id: Number,
-  text: string,
-  checked: Boolean
-}
+import { ITask } from 'src/app/services/interfaces';
+import { getMaxId } from 'src/app/services/getMaxId';
 
 @Component({
   selector: 'app-tasks-table',
@@ -14,29 +10,21 @@ interface task{
 
 export class TasksTableComponent implements OnInit {
 
-  tasks:Array<task> = [];
-  listLength = this.tasks.length;
-  @Output() newTaskChange: EventEmitter<Array<task>> = new EventEmitter();
+  @Input() tasks: Array<ITask> = [];
+  @Output() tasksChange: EventEmitter<Array<ITask>> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  task(){
-    console.log('emited');
-    
-  }
-  
-  newTask(event:string){
+  newTask(event: string) {
     if (event.length > 0) {
       this.tasks.push({
-        id: 1,
+        id: getMaxId(this.tasks),
         text: event,
         checked: false
       })
-      this.listLength = this.tasks.length;
-      this.newTaskChange.emit(this.tasks);
     }
   }
 }
