@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskCardComponent implements OnInit {
 
   constructor() { }
-  @Input() text: string="";
 
   checked = false;
 
