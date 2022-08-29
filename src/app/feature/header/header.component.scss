@@ -1,0 +1,11 @@
+ .header-container {
+    width:  min((100vw - (24px * 2)), 512px);
+    height: 64px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}

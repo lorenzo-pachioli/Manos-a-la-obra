@@ -9,19 +9,23 @@ import { Component, EventEmitter, Input, OnInit, Output  } from '@angular/core';
 export class TaskInputComponent implements OnInit {
 
   constructor() { }
-  @Output() textChange: EventEmitter<string> = new EventEmitter();
+  @Input() placeholder: string = '';
+  @Input() newTask:string = '';
+  @Output() newTaskChange: EventEmitter<string> = new EventEmitter();
+  @Output() addTaskChange: EventEmitter<boolean> = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  newTask:string = '';
+  
 
   setText(event: any){
     this.newTask = event.target.value;
+    this.newTaskChange.emit(this.newTask);
   }
 
   createTask(){
-    this.textChange.emit(this.newTask);
+    this.addTaskChange.emit(true);
     this.newTask = '';
   }
   

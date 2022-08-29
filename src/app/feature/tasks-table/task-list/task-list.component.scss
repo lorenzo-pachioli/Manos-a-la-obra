@@ -5,15 +5,16 @@
     justify-content: flex-start;
     gap: 16px;
     list-style: none;
+    
 }
 
 .task-list li {
     width: 100%;
-    height: 60px;
+    height: fit-content;
 }
 
 .task-card {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     
 }

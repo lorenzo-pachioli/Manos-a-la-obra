@@ -1,0 +1,100 @@
+@import '../../../../_colorPalette';
+
+.task-card  {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 4px;
+    background-color: $Negro10;
+    border-radius: 4px;
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        margin: 4px;
+    }
+}
+.task-text{
+    width: calc(100% - ((8px * 4) + (48px * 3))); //(((padding-left + gap  * 2 + marging) * 4) + box-width * 3)
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 16px 4px;
+
+    p{
+        width: calc(100% - 34px);
+        height: 100%;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.task-text:hover {
+    min-height: 24px;
+    height: fit-content;
+
+    >p {
+        height: fit-content;
+        word-wrap: break-word;
+    }
+}
+
+.checkBox {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $Negro;
+    background-color: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    .tic {
+        height: 16px;
+    }
+}
+
+.checkBox:checked ~ img {
+    display: block;
+}
+
+.checkBox:hover {
+    background-color: $Negro50;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    .task-card {
+        background-color: $Blanco20;
+
+        p {
+            color: $Blanco;
+        }
+    }
+
+    .checkBox {
+        border: 2px solid $Blanco;
+
+        .tic {
+            color: $Blanco;
+        }
+    }
+
+    .checkBox:hover {
+        background-color: $Blanco50;
+    }
+}

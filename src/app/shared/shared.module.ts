@@ -2,21 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TitleH1Component } from './title-h1/title-h1.component';
-import { TaskCardComponent } from './task-card/task-card.component';
-
+import { ButtonComponent } from './button/button.component';
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import { appCheckTicIcon } from '../svg/checkTic';
 
 
 @NgModule({
   declarations: [
     TitleH1Component,
-    TaskCardComponent
+    ButtonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SvgIconsModule.forRoot({
+      icons: [
+        appCheckTicIcon
+      ],
+    })
   ],
   exports: [
     TitleH1Component,
-    TaskCardComponent
+    ButtonComponent
   ]
 })
 export class SharedModule { }

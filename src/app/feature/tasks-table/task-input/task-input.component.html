@@ -1,4 +1,4 @@
 <form class="task-input" (submit)="$event.preventDefault()">
-    <input [value]="newTask" (input)='setText($event);' type="text" class="task"/>
-    <button class="add" (click)="createTask()">ADD</button>
+    <input [value]="newTask" (input)='setText($event);' type="text" class="task" [placeholder]="placeholder"/>
+    <app-button  (click)="createTask()" [svg]="'check-tic'"></app-button>
 </form>

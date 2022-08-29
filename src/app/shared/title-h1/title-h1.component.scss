@@ -1,9 +1,18 @@
+@import '../../../colorPalette';
+
 .title-h1{
     height: 64px;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 36px;
     line-height: 35px;
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    .title-h1 {
+        color: $Blanco;
+    }
 }

@@ -1,0 +1,15 @@
+<div class="task-card" >
+    <div class="task-text">
+        <button class="checkBox" (click)="changeCheck()">
+            <svg-icon *ngIf="checked"  key='check-tic' class="tic svg-icons"></svg-icon>
+        </button>
+        <p [ngStyle]="{'text-decoration': checked ? 'line-through':'none'}">
+            <ng-content></ng-content>
+        </p>
+    </div>
+    <div class="buttons">
+        <app-button [svg]="'clipboard'"></app-button>
+        <app-button [svg]="'share-logo'"></app-button>
+        <app-button (click)="deleteTaskHandler()" [svg]="'trash-can'"></app-button>
+    </div>
+</div>
