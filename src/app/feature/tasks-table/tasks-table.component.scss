@@ -1,11 +1,10 @@
 @import '../../../colorPalette';
+@import '../../../mixins.scss';
 
 .task-table {
-    width: min((100vw - (24px * 2)), 512px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex(flex, center, flex-start, column);
+    @include width-responsive;
+    min-width: 312px;
     gap: 16px;
     box-sizing: border-box;
 
@@ -22,9 +21,10 @@
 }
 
 .floating{
+    @include width-responsive;
+    min-width: 312px;
     position: fixed;
-    top: 20px;
-    width:  min((100vw - (24px * 2)), 512px);
+    top: 16px;
     backdrop-filter: blur(12px);
     border-radius: 4px;
 }

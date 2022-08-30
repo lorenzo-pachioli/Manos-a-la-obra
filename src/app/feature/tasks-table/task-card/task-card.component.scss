@@ -1,66 +1,46 @@
-@import '../../../../_colorPalette';
+@import '../../../../colorPalette';
+@import '../../../../mixins.scss';
 
 .task-card  {
+    @include flex(flex, center, space-between, row);
     height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 0 4px;
     background-color: $Negro10;
     border-radius: 4px;
 
     .buttons {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
+        @include flex(flex, center, flex-end, row);
         gap: 8px;
-        margin: 4px;
+        margin: 8px;
     }
 }
 .task-text{
-    width: calc(100% - ((8px * 4) + (48px * 3))); //(((padding-left + gap  * 2 + marging) * 4) + box-width * 3)
+    width: calc(100% - 74px - (48px * 3));
     height: 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
     gap: 8px;
-    margin: 16px 4px;
-
-    p{
-        width: calc(100% - 34px);
-        height: 100%;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 24px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+    margin: 16px 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .task-text:hover {
     min-height: 24px;
     height: fit-content;
-
-    >p {
-        height: fit-content;
-        word-wrap: break-word;
-    }
+    word-wrap: break-word;
 }
 
 .checkBox {
+    @include flex(flex, center, center);
     width: 24px;
     height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 2px solid $Negro;
     background-color: transparent;
     border-radius: 0;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+    margin: 16px 8px;
 
     .tic {
         height: 16px;
