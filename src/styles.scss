@@ -1,6 +1,43 @@
+@import './colorPalette';
 * {
     font-family: 'Roboto Flex', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+}
+
+:root {
+    background-color: $Blanco;
+    scrollbar-color: $Negro50 $Blanco;
+    
+    ::-webkit-scrollbar-track {
+        background: $Blanco;
+        border-radius: 4px;
+    }
+
+    .svg-icons{
+        color: $Negro;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    
+    :root {
+        background-color: $Negro;
+        scrollbar-color: $Blanco50 $Negro;
+        
+        ::-webkit-scrollbar-track {
+            background: $Negro;
+        }
+        .svg-icons{
+            color: $Blanco;
+        }
+    }
+    
 }

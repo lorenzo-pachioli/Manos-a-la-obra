@@ -1,9 +1,18 @@
+@import '../../../colorPalette';
+@import '../../../mixins';
+
 .title-h1{
+    @include flex(flex, center);
     height: 64px;
     font-weight: 400;
-    font-size: 30px;
-    line-height: 35px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    .title-h1 {
+        color: $Blanco;
+    }
 }

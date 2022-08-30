@@ -1,0 +1,80 @@
+@import '../../../../colorPalette';
+@import '../../../../mixins.scss';
+
+.task-card  {
+    @include flex(flex, center, space-between, row);
+    height: fit-content;
+    background-color: $Negro10;
+    border-radius: 4px;
+
+    .buttons {
+        @include flex(flex, center, flex-end, row);
+        gap: 8px;
+        margin: 8px;
+    }
+}
+.task-text{
+    width: calc(100% - 74px - (48px * 3));
+    height: 24px;
+    gap: 8px;
+    margin: 16px 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.task-text:hover {
+    min-height: 24px;
+    height: fit-content;
+    word-wrap: break-word;
+}
+
+.checkBox {
+    @include flex(flex, center, center);
+    width: 24px;
+    height: 24px;
+    border: 2px solid $Negro;
+    background-color: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    margin: 16px 8px;
+
+    .tic {
+        height: 16px;
+    }
+}
+
+.checkBox:checked ~ img {
+    display: block;
+}
+
+.checkBox:hover {
+    background-color: $Negro50;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    .task-card {
+        background-color: $Blanco20;
+
+        p {
+            color: $Blanco;
+        }
+    }
+
+    .checkBox {
+        border: 2px solid $Blanco;
+
+        .tic {
+            color: $Blanco;
+        }
+    }
+
+    .checkBox:hover {
+        background-color: $Blanco50;
+    }
+}

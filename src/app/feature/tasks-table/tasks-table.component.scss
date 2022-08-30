@@ -1,10 +1,18 @@
+@import '../../../colorPalette';
+@import '../../../mixins.scss';
+
 .task-table {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 30px;
+    @include flex(flex, center, flex-start, column);
+    @include width-responsive;
+    min-width: 312px;
+    gap: 16px;
+    box-sizing: border-box;
+
+    > hr {
+        color: $Negro10;
+        width: 100%;
+        height: 2px;
+    }
 }
 
 .task-input {
@@ -12,6 +20,24 @@
     height: 60px;
 }
 
+.floating{
+    @include width-responsive;
+    min-width: 312px;
+    position: fixed;
+    top: 16px;
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+}
+
 .task-list {
     width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    .task-table {
+        > hr {
+            color: $Blanco20;
+        }
+    }
 }

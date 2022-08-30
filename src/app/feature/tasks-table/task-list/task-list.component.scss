@@ -1,19 +1,18 @@
+@import '../../../../mixins';
+
 .task-list {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(flex, center, flex-start, column-reverse);
     gap: 16px;
     list-style: none;
 }
 
 .task-list li {
     width: 100%;
-    height: 60px;
+    height: fit-content;
 }
 
 .task-card {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     
 }

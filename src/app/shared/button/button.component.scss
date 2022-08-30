@@ -1,0 +1,47 @@
+@import '../../../_colorPalette';
+@import '../../../mixins';
+
+.button-container {
+    @include flex(flex, center, center);
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border: 1px solid $Negro;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    .svg-icons{
+        font-size: 24px;
+    }
+}
+
+.button-container:hover {
+    background-color: $Negro50;
+}
+
+.button-container:active {
+    background-color: $Negro10;
+}
+
+@media (prefers-color-scheme: dark) {
+    
+    .button-container {
+        border: 1px solid $Blanco;
+        > img{
+            > path {
+                fill: $Blanco;
+            }
+        }
+    }
+
+    .button-container:hover {
+        background-color: $Blanco50;
+    }
+
+    .button-container:active {
+        background-color: $Blanco20;
+    }
+}
+
