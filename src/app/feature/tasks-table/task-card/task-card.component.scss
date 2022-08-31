@@ -1,11 +1,14 @@
-@import '../../../../colorPalette';
 @import '../../../../mixins.scss';
 
 .task-card  {
     @include flex(flex, center, space-between, row);
     height: fit-content;
-    background-color: $Negro10;
+    background-color: var(--Negro10-Blanco20);
     border-radius: 4px;
+
+    p {
+        color: var(--Negro-Blanco);
+    }
 
     .buttons {
         @include flex(flex, center, flex-end, row);
@@ -35,7 +38,7 @@
     @include flex(flex, center, center);
     width: 24px;
     height: 24px;
-    border: 2px solid $Negro;
+    border: 2px solid var(--Negro-Blanco);
     background-color: transparent;
     border-radius: 0;
     cursor: pointer;
@@ -44,6 +47,7 @@
 
     .tic {
         height: 16px;
+        color: var(--Negro-Blanco);
     }
 }
 
@@ -52,29 +56,6 @@
 }
 
 .checkBox:hover {
-    background-color: $Negro50;
+    background-color: var(--Negro50-Blanco50);
 }
 
-
-@media (prefers-color-scheme: dark) {
-    
-    .task-card {
-        background-color: $Blanco20;
-
-        p {
-            color: $Blanco;
-        }
-    }
-
-    .checkBox {
-        border: 2px solid $Blanco;
-
-        .tic {
-            color: $Blanco;
-        }
-    }
-
-    .checkBox:hover {
-        background-color: $Blanco50;
-    }
-}
