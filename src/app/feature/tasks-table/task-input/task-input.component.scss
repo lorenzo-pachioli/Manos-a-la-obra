@@ -1,4 +1,3 @@
-@import '../../../../colorPalette';
 @import '../../../../mixins';
 
 .task-input{
@@ -6,8 +5,8 @@
     width: 100%;
     height: 64px;
     padding: 8px;
-    background-color: $Negro10;
-    color: $Negro;
+    background-color: var(--Negro10-Blanco10);
+    color: var(--Negro-Blanco);
     border-radius: 4px;
     gap: 8px;
 }
@@ -20,15 +19,5 @@
     background-color: transparent;
     border: none;
     outline: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    
-    .task-input {
-        background-color: $Blanco10;
-        color: $Blanco;
-    }
-    .task {
-        color: $Blanco;
-    }
+    color: var(--Negro-Blanco);
 }

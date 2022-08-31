@@ -2,8 +2,8 @@
  
  .header-container {
     @include flex(flex, center, space-between, row);
+    @include width-responsive;
     min-width: 312px;
-    width:  min((100vw - (24px * 2)), 512px);
     height: 64px;
     padding: 8px;
     margin-top: 24px;
