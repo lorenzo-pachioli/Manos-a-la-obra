@@ -1,6 +1,5 @@
-<div class="task-table" >
-    <app-task-input id='taskInput' [(newTask)]="newTask" (addTaskChange)="addTask($event)" class="task-input"></app-task-input>
-    <app-task-input *ngIf="!inputVisible" [(newTask)]="newTask" (addTaskChange)="addTask($event)" class="floating" placeholder="Escribe una tarea"></app-task-input>
+<div class="task-table" #sticky>
+    <app-task-input  [(newTask)]="newTask" (addTaskChange)="addTask($event)" class="sticky" [placeholder]="placeholder"></app-task-input>
     <hr />
     <app-task-list [(tasks)]="tasks" class="task-list"></app-task-list>
 </div>

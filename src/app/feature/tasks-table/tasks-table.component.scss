@@ -19,11 +19,12 @@
     height: 60px;
 }
 
-.floating{
+.sticky {
     @include width-responsive;
     min-width: 312px;
-    position: fixed;
-    top: 16px;
+    scroll-margin-top: 20px;
+    position: sticky;
+    top: 20px;
     backdrop-filter: blur(12px);
     border-radius: 4px;
 }

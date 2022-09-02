@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { TasksTableComponent } from './tasks-table/tasks-table.component';
-import { TaskInputComponent } from './tasks-table/task-input/task-input.component';
-import { TaskListComponent } from './tasks-table/task-list/task-list.component';
-import { TaskCardComponent } from './tasks-table/task-card/task-card.component';
+import { TaskInputComponent } from './task-input/task-input.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskCardComponent } from './task-card/task-card.component';
 import { SharedModule } from '../shared/shared.module';
-import { HeaderComponent } from './header/header.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { appCheckTicIcon } from '../svg/checkTic';
 import { appClipboardIcon } from '../svg/clipboard';
@@ -16,11 +14,10 @@ import { appTrashCanIcon } from '../svg/trashCan';
 
 @NgModule({
   declarations: [
-    TasksTableComponent,
     TaskInputComponent,
     TaskListComponent,
     TaskCardComponent,
-    HeaderComponent
+    TasksTableComponent
   ],
   imports: [
     CommonModule,
@@ -36,8 +33,7 @@ import { appTrashCanIcon } from '../svg/trashCan';
     })
   ],
   exports: [
-    TasksTableComponent,
-    HeaderComponent
+    TasksTableComponent
   ]
 })
 

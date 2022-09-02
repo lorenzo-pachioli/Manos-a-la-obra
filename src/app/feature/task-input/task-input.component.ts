@@ -26,7 +26,6 @@ export class TaskInputComponent implements OnInit {
 
   createTask(){
     this.addTaskChange.emit(true);
-    this.newTask = '';
   }
   
 }

@@ -1,5 +1,0 @@
-<ul class="task-list">
-    <li *ngFor="let task of tasks" >
-        <app-task-card class="task-card" [id]="task.id" [(checked)]="task.checked" (deleteTask)="deleteTask(task.id)">{{task.text}}</app-task-card>
-    </li>
-</ul>
