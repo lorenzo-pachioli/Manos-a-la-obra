@@ -11,6 +11,7 @@ import { appClipboardIcon } from '../svg/clipboard';
 import { appShareLogoIcon } from '../svg/shareLogo';
 import { appSquareCuttedIcon } from '../svg/squareCutted';
 import { appTrashCanIcon } from '../svg/trashCan';
+import { TaskGetterService } from '../services/task-getter.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,9 @@ import { appTrashCanIcon } from '../svg/trashCan';
         appTrashCanIcon
       ],
     })
+  ],
+  providers: [
+    TaskGetterService
   ],
   exports: [
     TasksTableComponent

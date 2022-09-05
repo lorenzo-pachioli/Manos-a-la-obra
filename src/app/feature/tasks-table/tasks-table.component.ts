@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { ITask } from 'src/app/services/interfaces';
 import { getMaxId } from 'src/app/services/getMaxId';
+import { TaskGetterService } from 'src/app/services/task-getter.service';
 
 @Component({
   selector: 'app-tasks-table',
@@ -24,9 +25,10 @@ export class TasksTableComponent implements OnInit {
   @Output() newTaskChange: EventEmitter<string> = new EventEmitter();
   @Output() tasksChange: EventEmitter<Array<ITask>> = new EventEmitter();
 
-  constructor() {}
+  constructor(public taskList:TaskGetterService) {}
 
   ngOnInit(): void {
+    this.tasks = this.taskList.getTasks();
   }
 
   @ViewChild('sticky') sticky!: ElementRef;
@@ -40,13 +42,9 @@ export class TasksTableComponent implements OnInit {
   }
 
   addTask(event: boolean) {
-
     if (event && this.newTask.length > 0) {
-      this.tasks.push({
-        id: getMaxId(this.tasks),
-        text: this.newTask,
-        checked: false
-      })
+      this.taskList.addTask(this.newTask);
+      this.tasksChange.emit(this.tasks);
     }
     this.newTask = '';
   }
