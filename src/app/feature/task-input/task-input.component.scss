@@ -1,4 +1,4 @@
-@import '../../../../mixins';
+@import '../../../mixins';
 
 .task-input{
     @include flex(flex, center, space-between, row);

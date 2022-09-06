@@ -1,4 +1,4 @@
-@import '../../../../mixins.scss';
+@import '../../../mixins.scss';
 
 .task-card  {
     @include flex(flex, center, space-between, row);
@@ -12,26 +12,15 @@
 
     .buttons {
         @include flex(flex, center, flex-end, row);
-        gap: 8px;
-        margin: 8px;
     }
 }
-.task-text{
+
+.task-text {
     width: calc(100% - 74px - (48px * 3));
-    height: 24px;
-    gap: 8px;
-    margin: 16px 0;
+    height: fit-content;
     font-weight: 400;
     font-size: 24px;
     line-height: 24px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.task-text:hover {
-    min-height: 24px;
-    height: fit-content;
-    word-wrap: break-word;
 }
 
 .checkBox {
