@@ -9,7 +9,6 @@ import {
   ViewChild
 } from '@angular/core';
 import { ITask } from 'src/app/services/interfaces';
-import { getMaxId } from 'src/app/services/getMaxId';
 import { TaskGetterService } from 'src/app/services/task-getter.service';
 
 @Component({
@@ -25,14 +24,14 @@ export class TasksTableComponent implements OnInit {
   @Output() newTaskChange: EventEmitter<string> = new EventEmitter();
   @Output() tasksChange: EventEmitter<Array<ITask>> = new EventEmitter();
 
-  constructor(public taskList:TaskGetterService) {}
+  constructor(public taskList: TaskGetterService) { }
 
   ngOnInit(): void {
     this.tasks = this.taskList.getTasks();
   }
 
   @ViewChild('sticky') sticky!: ElementRef;
- 
+
   placeholder = '';
 
   @HostListener('window:scroll')
@@ -47,5 +46,9 @@ export class TasksTableComponent implements OnInit {
       this.tasksChange.emit(this.tasks);
     }
     this.newTask = '';
+  }
+
+  deleteTask(id: number) {
+    this.tasks = this.taskList.deleteTask(id);
   }
 }

@@ -1,12 +1,11 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
   Input,
   Output,
   EventEmitter
 } from '@angular/core';
 import { ITask } from 'src/app/services/interfaces';
-import { TaskGetterService } from 'src/app/services/task-getter.service';
 
 @Component({
   selector: 'app-task-list',
@@ -17,12 +16,13 @@ export class TaskListComponent implements OnInit {
 
   @Input() tasks: Array<ITask> = [];
   @Output() tasksChange: EventEmitter<Array<ITask>> = new EventEmitter();
+  @Output() deleteTask: EventEmitter<number> = new EventEmitter();
 
-  constructor(public taskList:TaskGetterService) {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  deleteTask(id:number){
-    this.tasksChange.emit(this.taskList.deleteTask(id));
+  onDelete(id: number) {
+    this.deleteTask.emit(id);
   };
 }

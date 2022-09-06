@@ -3,9 +3,9 @@
         <app-task-card class="task-card" [id]="task.id" [(checked)]="task.checked">
             <p class="task-text" cardText>{{task.text}}</p>
             <div class="buttons" cardButtons>
-                <app-button [svg]="'clipboard'"></app-button>
-                <app-button [svg]="'share-logo'"></app-button>
-                <app-button (click)="deleteTask(task.id)" [svg]="'trash-can'"></app-button>
+                <app-button svg="clipboard"></app-button>
+                <app-button svg="share-logo"></app-button>
+                <app-button (click)="onDelete(task.id)" svg="trash-can"></app-button>
             </div>
         </app-task-card>
     </li>
